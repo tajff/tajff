@@ -242,3 +242,16 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {"doctype": "Client Script",},
+    {"doctype": "Server Script",},
+    {"doctype": "Custom Field",},
+    {"doctype": "Item", "filters": 
+     [["custom_raw_material_specification", "in", [
+        "Rejected","Approved"
+    ]]]},
+#    {"doctype": "Custom Field", "filters": [["name", "in", [
+#        "Item-custom_raw_material_specification",
+#        "Item-item_name_arabic",
+#    ]]]},
+]
