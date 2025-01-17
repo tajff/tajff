@@ -137,13 +137,16 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
+    "Item":{
+        'before_save': "tajff.qc.doctype.raw_material_specification.override.item.raw_material_speceification"
+    }
 # 	"*": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 # 	}
-# }
+ }
 
 # Scheduled Tasks
 # ---------------
