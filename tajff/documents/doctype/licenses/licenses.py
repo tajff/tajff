@@ -7,17 +7,20 @@ from frappe.utils import nowdate, date_diff,getdate, today
 
 
 class Licenses(Document):
-	def before_save(doc, method):
-		update_status(doc.doctype, {"name", doc.name})
+	def on_update(self):
+		update_status('Licenses', filters={'name':self.name})
+		self.reload()
 
-
+	def befor_save(self):
+		update_status('Licenses', filters={'name':self.name})
+		self.reload()
+		
 def	scheduled_status_update(doctype, filters=None):
-	update_status("Licenses")
+	update_status('Licenses')
 
 def	update_status(doctype, filters=None):
 	today_date = getdate(today())
-
-	docs = frappe.get_all('Licenses',fields=['name','expiry_date','status'])
+	docs = frappe.get_all(doctype, filters=filters, fields=['name','expiry_date','status'])
 	for doc in docs:
 		if not doc.get("expiry_date"):
 			continue
@@ -32,4 +35,5 @@ def	update_status(doctype, filters=None):
 			new_status = 'Active'
 
 		frappe.db.set_value(doctype, doc["name"], "status", new_status)
+		
 		frappe.db.commit()

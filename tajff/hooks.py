@@ -140,7 +140,11 @@ app_license = "mit"
 doc_events = {
     "Item":{
         'before_save': "tajff.qc.doctype.raw_material_specification.override.item.raw_material_speceification"
-    }
+    },
+    # "Licenses":{
+    #     'before_save': "tajff.documents.doctype.licenses.licenses.before_save",
+    #     'on_update': "tajff.documents.doctype.licenses.licenses.on_update"
+    # },
 # 	"*": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",

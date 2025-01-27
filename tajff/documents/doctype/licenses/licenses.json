@@ -1,7 +1,9 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:license_english",
  "creation": "2025-01-26 20:46:12.936298",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -19,7 +21,8 @@
    "in_preview": 1,
    "label": "License English",
    "options": "Licenses Type",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fetch_from": "license_english.type_arabic",
@@ -59,10 +62,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-26 20:57:53.174305",
+ "modified": "2025-01-27 19:38:12.554391",
  "modified_by": "Administrator",
  "module": "Documents",
  "name": "Licenses",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
