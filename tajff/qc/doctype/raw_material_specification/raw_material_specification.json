@@ -14,7 +14,9 @@
   "item_arabic",
   "column_break_kehy",
   "status",
-  "section_break_vpgt",
+  "amended_from",
+  "specification_tab",
+  "sb",
   "column_break_yraz",
   "msds",
   "coa",
@@ -27,13 +29,15 @@
   "shelf_life",
   "expiry_date",
   "general",
-  "section_break_6hy4",
+  "physical_attributes_tab",
+  "section_break_mwcm",
   "physical_attributes",
   "color",
   "appearance",
   "column_break_ympw",
   "odor",
   "flavor",
+  "microbiological_analysis_tab",
   "section_break_xcgc",
   "microbilogical",
   "enterobaceriaceae",
@@ -46,6 +50,7 @@
   "column_break_vblq",
   "clostridium_botutinum",
   "clostridium_perfringens",
+  "allergic_tab",
   "section_break_3okb",
   "celery",
   "cereal",
@@ -61,8 +66,7 @@
   "peanut",
   "sesame",
   "soybeans",
-  "sulfite",
-  "amended_from"
+  "sulfite"
  ],
  "fields": [
   {
@@ -99,12 +103,6 @@
    "fieldname": "general",
    "fieldtype": "Data",
    "label": "Addtional Information"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_6hy4",
-   "fieldtype": "Section Break",
-   "label": "Physical Attributes"
   },
   {
    "default": "0",
@@ -145,10 +143,8 @@
    "label": "Appearance"
   },
   {
-   "collapsible": 1,
    "fieldname": "section_break_xcgc",
-   "fieldtype": "Section Break",
-   "label": "Microbiological Analysis"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "odor",
@@ -175,10 +171,8 @@
    "label": "Yeasts and Moulds"
   },
   {
-   "collapsible": 1,
    "fieldname": "section_break_3okb",
-   "fieldtype": "Section Break",
-   "label": "Allergic"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "salmonella",
@@ -286,17 +280,12 @@
   },
   {
    "fieldname": "tab_break_9juh",
-   "fieldtype": "Tab Break"
+   "fieldtype": "Tab Break",
+   "label": "Item"
   },
   {
    "fieldname": "column_break_kehy",
    "fieldtype": "Column Break"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_vpgt",
-   "fieldtype": "Section Break",
-   "label": "Specification"
   },
   {
    "fieldname": "column_break_yraz",
@@ -383,11 +372,39 @@
    "label": "Series",
    "options": "QC-RMS-.####",
    "reqd": 1
+  },
+  {
+   "fieldname": "specification_tab",
+   "fieldtype": "Tab Break",
+   "label": "Specification"
+  },
+  {
+   "fieldname": "sb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "physical_attributes_tab",
+   "fieldtype": "Tab Break",
+   "label": "Physical Attributes"
+  },
+  {
+   "fieldname": "section_break_mwcm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "microbiological_analysis_tab",
+   "fieldtype": "Tab Break",
+   "label": "Microbiological Analysis"
+  },
+  {
+   "fieldname": "allergic_tab",
+   "fieldtype": "Tab Break",
+   "label": "Allergic"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-07 07:51:08.046857",
+ "modified": "2025-01-27 14:46:42.724198",
  "modified_by": "Administrator",
  "module": "QC",
  "name": "Raw Material Specification",

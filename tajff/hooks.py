@@ -153,7 +153,7 @@ doc_events = {
 
 scheduler_events = {
 	"daily": [
-		"tajff.documents.doctype.licenses.licenses.schedule_status"
+		"tajff.documents.doctype.licenses.licenses.scheduled_status_update"
 	],
 	# "daily": [
 	# 	"tajff.tasks.daily"

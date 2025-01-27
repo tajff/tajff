@@ -3,32 +3,33 @@
 
 import frappe
 from frappe.model.document import Document
-from frappe.utils import nowdate, date_diff,getdate
+from frappe.utils import nowdate, date_diff,getdate, today
 
 
 class Licenses(Document):
-	def before_save(self):
-		update_status(self)
+	def before_save(doc, method):
+		update_status(doc.doctype, {"name", doc.name})
 
 
-def schedule_status():
+def	scheduled_status_update(doctype, filters=None):
+	update_status("Licenses")
+
+def	update_status(doctype, filters=None):
+	today_date = getdate(today())
+
 	docs = frappe.get_all('Licenses',fields=['name','expiry_date','status'])
-	update_status([doc.name for doc in docs])
-
-def	update_status(docs):
-	if not isinstance(docs, list):
-		docs = [docs]
-
 	for doc in docs:
-		if isinstance(doc, str):
-			doc = frappe.get_doc('Licenses', doc)
-			
-		today_date = nowdate()
-		between_dates = date_diff(getdate(doc.expiry_date), today_date)
-		if between_dates <= 0:
-			doc.status = 'Expired'
-		elif between_dates <= 30:
-			doc.status = 'Renew'
-		elif between_dates > 30:
-			doc.status = 'Active'
-		doc.save()
+		if not doc.get("expiry_date"):
+			continue
+
+		expiry_date = getdate(doc["expiry_date"])
+		days_difference = date_diff(expiry_date, today_date)
+		if days_difference <= 0:
+			new_status = 'Expired'
+		elif days_difference <= 30:
+			new_status = 'Renew'
+		elif days_difference > 30:
+			new_status = 'Active'
+
+		frappe.db.set_value(doctype, doc["name"], "status", new_status)
+		frappe.db.commit()
