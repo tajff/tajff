@@ -151,23 +151,23 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"tajff.tasks.all"
-# 	],
-# 	"daily": [
-# 		"tajff.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"tajff.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"tajff.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"tajff.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"tajff.documents.doctype.licenses.licenses.schedule_status"
+	],
+	# "daily": [
+	# 	"tajff.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"tajff.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"tajff.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"tajff.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
