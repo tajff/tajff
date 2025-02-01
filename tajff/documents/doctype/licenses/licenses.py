@@ -3,7 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
-from frappe.utils import nowdate, date_diff,getdate, today
+from frappe.utils import date_diff,getdate, today
 
 
 class Licenses(Document):
@@ -14,7 +14,7 @@ class Licenses(Document):
 	def befor_save(self):
 		update_status('Licenses', filters={'name':self.name})
 		self.reload()
-		
+
 def	scheduled_status_update(doctype, filters=None):
 	update_status('Licenses')
 
@@ -27,7 +27,7 @@ def	update_status(doctype, filters=None):
 
 		expiry_date = getdate(doc["expiry_date"])
 		days_difference = date_diff(expiry_date, today_date)
-		if days_difference <= 0:
+		if days_difference < 0:
 			new_status = 'Expired'
 		elif days_difference <= 30:
 			new_status = 'Renew'

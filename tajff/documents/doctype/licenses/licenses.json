@@ -17,8 +17,6 @@
   {
    "fieldname": "license_english",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_preview": 1,
    "label": "License English",
    "options": "Licenses Type",
    "reqd": 1,
@@ -62,7 +60,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-27 19:38:12.554391",
+ "modified": "2025-01-27 19:59:01.627951",
  "modified_by": "Administrator",
  "module": "Documents",
  "name": "Licenses",

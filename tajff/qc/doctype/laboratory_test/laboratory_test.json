@@ -124,7 +124,7 @@
   }
  ],
  "links": [],
- "modified": "2024-12-31 12:07:49.154336",
+ "modified": "2025-01-31 19:56:11.879037",
  "modified_by": "Administrator",
  "module": "QC",
  "name": "Laboratory Test",
@@ -152,6 +152,18 @@
    "read": 1,
    "report": 1,
    "role": "QC User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
    "share": 1,
    "write": 1
   }

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_UhLxR-JOh\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved Item\",\"col\":3}},{\"id\":\"WHiIjEoq9F\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Rejected Item\",\"col\":3}},{\"id\":\"6Zn8CMDbDS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Items\",\"col\":3}},{\"id\":\"66vQb4JTDL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Specification\",\"col\":7}},{\"id\":\"5UdVe9qmWT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visitor\",\"col\":7}},{\"id\":\"_K-kSGsDxx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Laboratory Test\",\"col\":7}}]",
+ "content": "[{\"id\":\"WHiIjEoq9F\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Rejected Item\",\"col\":3}},{\"id\":\"6Zn8CMDbDS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Items\",\"col\":3}},{\"id\":\"66vQb4JTDL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material Specification\",\"col\":7}},{\"id\":\"5UdVe9qmWT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visitor\",\"col\":7}},{\"id\":\"_K-kSGsDxx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Laboratory Test\",\"col\":7}}]",
  "creation": "2024-12-30 13:16:13.926119",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,18 +13,14 @@
  "is_hidden": 0,
  "label": "QC",
  "links": [],
- "modified": "2025-01-13 12:40:08.963320",
- "modified_by": "m.bajandooh@tajff.com",
+ "modified": "2025-02-01 00:35:42.527125",
+ "modified_by": "Administrator",
  "module": "QC",
  "name": "QC",
  "number_cards": [
   {
    "label": "Pending Items",
    "number_card_name": "Pending Items"
-  },
-  {
-   "label": "Approved Item",
-   "number_card_name": "Approved Item"
   },
   {
    "label": "Rejected Item",
@@ -37,17 +33,26 @@
  "quick_lists": [],
  "roles": [
   {
-   "role": "Accounts Manager"
-  },
-  {
-   "role": "Sales Manager"
-  },
-  {
    "role": "System Manager"
+  },
+  {
+   "role": "QC User"
+  },
+  {
+   "role": "Quality Manager"
   }
  ],
  "sequence_id": 1.1,
  "shortcuts": [
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "Open",
+   "label": "Visitor",
+   "link_to": "Visitor",
+   "stats_filter": "[[\"Visitor\",\"status\",\"=\",\"Open\",false]]",
+   "type": "DocType"
+  },
   {
    "color": "Orange",
    "doc_view": "List",
@@ -62,14 +67,6 @@
    "doc_view": "List",
    "label": "Laboratory Test",
    "link_to": "Laboratory Test",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Visitor",
-   "link_to": "Visitor",
    "stats_filter": "[]",
    "type": "DocType"
   }
