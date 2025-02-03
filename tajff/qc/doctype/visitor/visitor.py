@@ -9,7 +9,8 @@ class Visitor(Document):
 	def validate(self):
 		existing_email = frappe.get_all('Visitor', filters={'email': self.email, 'post_date': self.post_date})
 		if existing_email:
-			frappe.throw("This Visitor already exists!")
+			if existing_email[0].get('name') != self.name:
+				frappe.throw("This Visitor already exists for this date!")
 			
 	def on_submit(self):
 		if self.status in ["Open"]:

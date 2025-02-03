@@ -15,7 +15,7 @@ class Licenses(Document):
 		update_status('Licenses', filters={'name':self.name})
 		self.reload()
 
-def	scheduled_status_update(doctype, filters=None):
+def	scheduled_status_update():
 	update_status('Licenses')
 
 def	update_status(doctype, filters=None):
